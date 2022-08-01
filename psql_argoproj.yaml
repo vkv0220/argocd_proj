@@ -31,6 +31,8 @@ spec:
           value: db
     chart: postgresql
   syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
     automated:
       prune: true
       selfHeal: false
