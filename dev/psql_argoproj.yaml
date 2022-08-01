@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: psql
+spec:
+  destination:
+    name: ''
+    namespace: weather-app
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://charts.bitnami.com/bitnami'
+    targetRevision: 11.6.20
+    helm:
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: auth.password
+          value: app_pass
+        - name: primary.persistence.size
+          value: 2Gi
+        - name: readReplicas.persistence.size
+          value: 2Gi
+        - name: auth.username
+          value: app_user
+        - name: auth.database
+          value: app_db
+        - name: fullnameOverride
+          value: db
+    chart: postgresql
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
