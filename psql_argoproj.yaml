@@ -4,7 +4,7 @@ metadata:
   name: psql
   namespace: argocd
 spec:
-  roject:  default
+  project:  default
   
   destination:
     namespace: dev
