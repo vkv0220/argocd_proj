@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: {{ .Chart.Name }}
-        image: vkv0220/flask:2.0
+        image: vkv0220/flask:{{ .Chart.AppVersion }}
         ports:
         - containerPort: 8080
         env:
