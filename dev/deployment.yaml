@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-app
+spec:
+  selector:
+    matchLabels:
+      app: weather-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: weather-app
+    spec:
+      containers:
+      - name: weather-app
+        image: vkv0220/flask:2.0
+        ports:
+        - containerPort: 8080
