@@ -13,7 +13,7 @@ spec:
         app: weather-app
     spec:
       containers:
-      - name: weather-app
+      - name: {{ .Chart.Name }}
         image: vkv0220/flask:2.0
         ports:
         - containerPort: 8080
