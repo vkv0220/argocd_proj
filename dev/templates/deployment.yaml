@@ -17,8 +17,8 @@ spec:
         image: vkv0220/flask:2.0
         ports:
         - containerPort: 8080
-      env:
-      - name: API_KEY
-        value: {{ .Values.api_key }}
-      - name: NAME
-        value: {{ .Values.city_name }}      
+        env:
+        - name: API_KEY
+          value: {{ .Values.api_key }}
+        - name: NAME
+          value: {{ .Values.city_name }}      
