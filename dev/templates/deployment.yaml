@@ -21,4 +21,4 @@ spec:
         - name: API_KEY
           value: {{ .Values.api_key }}
         - name: NAME
-          value: {{ .Values.city_name }}      
+          value: {{ .Values.your_name }}      
